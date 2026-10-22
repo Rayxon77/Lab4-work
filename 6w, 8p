@@ -1,0 +1,25 @@
+
+#include <iostream>
+using namespace std;
+#include <iomanip>
+
+double factorial(int k) {
+    double result=1;
+    for( int i=2; i<=k; i++) {
+        result *=i;
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    cin>>n;
+    
+    double sum=0;
+    for (int i=0; i<n; i++){
+        sum += 1/factorial(i);
+    }
+    cout<<fixed<<setprecision(10)<<sum;
+    return 0;
+    
+}
