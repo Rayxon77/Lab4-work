@@ -1,0 +1,33 @@
+
+#include <iostream>
+using namespace std;
+
+int factorial(int d) {
+    int result=1;
+   for( int i=2; i<=d; i++) {
+    result *=i;
+   }
+   return result;
+}
+
+int digitFactorialSum(int n) {
+    int sum=0;
+    while (n>0) {
+        int digit= n%10;
+        sum += factorial(digit);
+        n /=10;
+    }
+    return sum;
+}
+
+int main() {
+    int N;
+    cin>>N;
+    for ( int i=1; i<N; i++) {
+         if (digitFactorialSum(i) == i) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+    return 0;
+}
